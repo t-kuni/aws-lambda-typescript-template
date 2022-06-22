@@ -4,7 +4,7 @@ This is a template for creating a small lambda function.
 It uses TypeScript so it can be written type-safe.
 It also supports zipping.
 
-Note: It is not intended to be used from API Gateway.
+Note: Not intended to be used from API Gateway.
 
 # Usage
 
