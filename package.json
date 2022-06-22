@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack --config webpack.config.js --mode development && node -e 'require(\"./dist/index.js\").handler()'",
     "build": "webpack --config webpack.config.js --mode production"
   },
   "author": "",

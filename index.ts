@@ -6,17 +6,19 @@ export async function handler(event:S3Event, context: Context) {
     try {
         dotenv.config();
 
-        console.log("処理開始", {event, context});
+        console.log("Begin", {event, context});
 
-        // ---- 任意の処理 開始 ----
-        console.log("環境変数 AWS_DEFAULT_REGION: " + process.env.AWS_DEFAULT_REGION)
-
-        const s3 = new S3();
+        // ---- Write your process here. ----
+        const s3 = new S3({
+            apiVersion: '2016-08-10',
+            region: process.env.AWS_DEFAULT_REGION
+        });
         await s3.createBucket({Bucket: "example"}).promise();
-        // ---- 任意の処理 終了 ----
+        // ---- Write your process here. ----
 
-        console.log("処理終了")
+        console.log("End")
     } catch (error) {
-        console.error("エラー発生", {error});
+        console.error("Error occurred", {error});
+        process.exit(1)
     }
 }
